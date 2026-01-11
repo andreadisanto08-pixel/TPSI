@@ -3,10 +3,10 @@ const albero = {
   si: {
     domanda: "Ha lavorato principalmente nella scienza?",
     si: { personaggio: "Marie Curie" },
-    no: { personaggio: "Ada Lovelace" }
+    no: { personaggio: "Ada Lovelac" }
   },
   no: {
-    domanda: "È vissuto prima del 1900?",
+    domanda: "È vissto prima del 1900?",
     si: { personaggio: "Leonardo da Vinci" },
     no: {
       domanda: "È famoso per l'elettricità?",
