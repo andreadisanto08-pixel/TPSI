@@ -3,15 +3,21 @@ Questo programma ti fa pensare a un personaggio famoso STEAM (scienza, tecnologi
 cerca di indovinare chi hai scelto. Ti farà alcune domande a cui devi rispondere Sì o No. Alla fine ti dirà il 
 personaggio oppure ti darà le possibili opzioni se non è sicuro.
 
+
+
 2. Cosa serve per usare il programma
 - Un computer, tablet o smartphone con browser.
 - Il file index.html del programma.
+
+
 
 3. Come iniziare
 Apri il file index.html con il browser.
 All’inizio vedrai la lista di tutti i personaggi possibili.
 Scegli mentalmente un personaggio tra quelli mostrati.
 Premi il pulsante Inizia il gioco.
+
+
 
 4. Come rispondere alle domande
 Dopo aver cliccato “Inizia il gioco”, il programma ti farà delle domande tipo:
@@ -22,6 +28,8 @@ Rispondi cliccando:
 - Sì → se la risposta corrisponde al personaggio che hai scelto
 - No → se non corrisponde
 Il programma userà le tue risposte per capire chi hai scelto.
+
+
 
 5. Risultato finale
 
