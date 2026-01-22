@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Indovina il personaggio STEAM</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #box {
+      background: white;
+      width: 450px;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #2d3436;
+    }
+
+    h2 {
+      color: #0984e3;
+    }
+
+    ul {
+      text-align: left;
+      max-height: 200px;
+      overflow-y: auto;
+      padding-left: 20px;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .start {
+      background-color: #6c5ce7;
+      color: white;
+    }
+
+    .yes {
+      background-color: #00b894;
+      color: white;
+    }
+
+    .no {
+      background-color: #d63031;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #2d3436;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <h1>Indovina il personaggio STEAM</h1>
+
+    <div id="startScreen">
+      <p><strong>Questi sono i personaggi possibili:</strong></p>
+      <ul id="characterList"></ul>
+      <p>Pensane uno, poi clicca su <strong>Inizia il gioco</strong>.</p>
+      <button class="start" onclick="startGame()">Inizia il gioco</button>
+    </div>
+
+    <div id="gameScreen" class="hidden">
+      <h2 id="question"></h2>
+      <button class="yes" onclick="answer(true)">Sì</button>
+      <button class="no" onclick="answer(false)">No</button>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script>
+    const characters = [
+      { name: "Albert Einstein", woman: false, alive: false, scientist: true },
+      { name: "Marie Curie", woman: true, alive: false, scientist: true },
+      { name: "Isaac Newton", woman: false, alive: false, scientist: true },
+      { name: "Galileo Galilei", woman: false, alive: false, scientist: true },
+      { name: "Nikola Tesla", woman: false, alive: false, scientist: true },
+      { name: "Ada Lovelace", woman: true, alive: false, scientist: true },
+      { name: "Alan Turing", woman: false, alive: false, scientist: true },
+      { name: "Leonardo da Vinci", woman: false, alive: false, scientist: true },
+      { name: "Charles Darwin", woman: false, alive: false, scientist: true },
+      { name: "Stephen Hawking", woman: false, alive: false, scientist: true },
+      { name: "Rita Levi-Montalcini", woman: true, alive: false, scientist: true },
+      { name: "Elon Musk", woman: false, alive: true, scientist: false },
+      { name: "Bill Gates", woman: false, alive: true, scientist: false },
+      { name: "Steve Jobs", woman: false, alive: false, scientist: false },
+      { name: "Margaret Hamilton", woman: true, alive: true, scientist: true },
+      { name: "Tim Berners-Lee", woman: false, alive: true, scientist: true },
+      { name: "Samantha Cristoforetti", woman: true, alive: true, scientist: true },
+      { name: "Jane Goodall", woman: true, alive: true, scientist: true },
+      { name: "Enrico Fermi", woman: false, alive: false, scientist: true },
+      { name: "Katherine Johnson", woman: true, alive: false, scientist: true }
+    ];
+
+    const questions = [
+      { text: "È una donna?", key: "woman" },
+      { text: "È ancora in vita?", key: "alive" },
+      { text: "È principalmente uno scienziato?", key: "scientist" }
+    ];
+
+    let currentQuestion = 0;
+    let possible = [];
+
+
+    const list = document.getElementById("characterList");
+    characters.forEach(c => {
+      const li = document.createElement("li");
+      li.innerText = c.name;
+      list.appendChild(li);
+    });
+
+    function startGame() {
+      document.getElementById("startScreen").classList.add("hidden");
+      document.getElementById("gameScreen").classList.remove("hidden");
+      possible = [...characters];
+      currentQuestion = 0;
+      document.getElementById("question").innerText = questions[0].text;
+    }
+
+    function answer(value) {
+      const key = questions[currentQuestion].key;
+      possible = possible.filter(c => c[key] === value);
+      currentQuestion++;
+
+      if (possible.length === 1) {
+        document.getElementById("question").innerText = "Il personaggio è:";
+        document.getElementById("result").innerText = possible[0].name;
+        hideButtons();
+      } 
+      else if (currentQuestion < questions.length) {
+        document.getElementById("question").innerText = questions[currentQuestion].text;
+      } 
+      else {
+        document.getElementById("question").innerText = "Potrebbe essere:";
+        document.getElementById("result").innerText = possible.map(c => c.name).join(", ");
+        hideButtons();
+      }
+    }
+
+    function hideButtons() {
+      document.querySelectorAll(".yes, .no").forEach(b => b.style.display = "none");
+    }
+  </script>
+</body>
+</html>

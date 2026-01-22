@@ -1,0 +1,49 @@
+INIZIO
+
+CREA lista PERSONAGGI
+Ogni personaggio ha:
+    -nome
+    -sesso (donna / non donna)
+    -stato (vivo / non vivo)
+    -ruolo (scienziato / non scienziato)
+
+
+CREA lista DOMANDE
+Ogni domanda ha:
+    -testo
+    -caratteristica associata
+
+
+VISUALIZZA elenco dei PERSONAGGI
+VISUALIZZA pulsante "Inizia il gioco"
+
+
+ATTENDI click su "Inizia il gioco"
+
+
+COPIA PERSONAGGI in POSSIBILI
+IMPOSTA indice_domanda = 0
+
+
+MENTRE indice_domanda < numero_domande E dimensione(POSSIBILI) > 1 FARE
+
+    VISUALIZZA DOMANDE[indice_domanda]
+
+    ATTENDI risposta utente (SÌ o NO)
+
+    FILTRA POSSIBILI mantenendo solo i personaggi
+    che soddisfano la risposta data
+
+    INCREMENTA indice_domanda
+
+FINE MENTRE
+
+
+SE dimensione(POSSIBILI) = 1 ALLORA
+    -VISUALIZZA "Il personaggio è:"
+    -VISUALIZZA nome del personaggio
+ALTRIMENTI
+    -VISUALIZZA "Il personaggio potrebbe essere:"
+    -VISUALIZZA elenco dei personaggi rimasti
+
+FINE
