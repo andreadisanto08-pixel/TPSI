@@ -1,0 +1,76 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: lightblue;
+    justify-items: center;
+}
+#pagina{
+    display: flex;
+}
+#primobox{
+    width: auto;
+    height: auto;
+    border: 5px lightblue solid;
+    border-radius: 20px;
+    padding: 2%;
+    margin-right: 2%;
+    background-color: #E1F0FA ;
+}
+.quesito{
+    background-color: white;
+    border: grey solid 2px;
+    padding: 2%;
+    border-radius: 5px;
+}
+#bottone_correggi{
+    width: 100%;
+    background-color: rgb(120, 120, 217);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+#login{
+    background-color: #FFF5C3 ;
+    border: solid lightblue 5px;
+    border-radius: 20px;
+    padding: 5%;
+    margin-bottom: 2%;
+}
+#bottone_accedi{
+    width: 100%;
+    color: white;
+    background-color: black;
+    border: black 2px solid;
+    border-radius: 4px;
+}
+#calc{
+    background-color: #E6F5E6; 
+    border: solid lightblue 5px;
+    border-radius: 20px;
+    padding: 5%;
+    margin-bottom: 2%;
+}
+input[type="text"]{
+    width: 100%;
+}
+#calcola{
+    color: white;
+    background-color: black;
+    border: black 2px solid;
+    border-radius: 4px;
+}
+#note{
+    width: 100%;
+}
+#consegna{
+    background-color: #F5B9CD; 
+    border: solid #F5B9CD 5px;
+    border-radius: 20px;
+    padding: 5%;
+}
+#bottone_terminacompito{
+    width: 100%;
+    background-color: #E61E5F;
+    color: white;
+
+}
