@@ -28,6 +28,11 @@ body{
     background-color: rgb(120, 120, 217);
     border: 2px solid black;
     border-radius: 5px;
+     transition: all 0.3s ease;
+    
+}
+button:hover{
+    transform: scale(1.02);
 }
 #login{
     background-color: #FFF5C3 ;
@@ -42,6 +47,7 @@ body{
     background-color: black;
     border: black 2px solid;
     border-radius: 4px;
+     transition: all 0.3s ease;
 }
 #calc{
     background-color: #E6F5E6; 
@@ -72,5 +78,12 @@ input[type="text"]{
     width: 100%;
     background-color: #E61E5F;
     color: white;
+    transition: all 0.3s ease;
 
 }
+
+
+
+
+
+

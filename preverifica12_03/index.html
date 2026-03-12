@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=ù, initial-scale=1.0">
     <title>Verifica informatica</title>
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="pagina">
@@ -14,36 +14,35 @@
             <div class="quesito">
                 <p>Quanto fà 125 * 8?</p>
                 <label>
-                    <input name="risposta1" type="radio" value="800">800
+                    <input  name="risposta1" type="radio" value="5">800
                 </label><br>
                 <label>
-                    <input name="risposta1"   type="radio" value="800">800
+                    <input  name="risposta1"   type="radio" value="1000">1000
                 </label><br>
                 <label>
-                    <input name="risposta1" type="radio" value="800">800
+                    <input  name="risposta1" type="radio" value="800">53453453453
                 </label><br>
                 <label>
-                    <input name="risposta1" type="radio" value="800">800
+                    <input  name="risposta1" type="radio" value="800">1,33333333
                 </label><br>
-
             </div><br>
-
             <div class="quesito">
                 <p>Quanto fà 125 * 8?</p>
                 <label>
-                    <input name="risposta2" type="radio" value="800">800
+                    <input  name="risposta2" type="radio" value="800">800
                 </label><br>
                 <label>
-                    <input name="risposta2"   type="radio" value="800">800
+                    <input  name="risposta2"   type="radio" value="800">800
                 </label><br>
                 <label>
-                    <input name="risposta2" type="radio" value="800">800
+                    <input  name="risposta2" type="radio" value="800">800
                 </label><br>
                 <label>
-                    <input name="risposta2" type="radio" value="800">800
+                    <input  name="risposta2" type="radio" value="800">800
                 </label><br>
             </div><br>
-            <button id="bottone_correggi">CORREGGI VERIFICA</button>
+            <button  id="bottone_correggi">CORREGGI VERIFICA</button>
+            <p id="rispostagiusta"></p>
         </div>
         <div id="colonna">
             <div id="login">
@@ -52,35 +51,32 @@
                 <input id="utente" type="text" placeholder="es.studente">
                 <p>password:</p>
                 <input id="password" type="text" placeholder="es.1234"><br><br>
-                <button id="bottone_accedi">accedi</button>
+                <button  onclick="login()" id="bottone_accedi">accedi</button>
             </div>
             <div id="calc">
                 <h2>Calcolatrice</h2>
-                <input type="text" placeholder="numero 1"><br>
+                <input id="numero1" type="number" placeholder="numero 1"><br>
                 <select  id="operazione">
                     <option value="+">somma(+)</option>
                     <option value="-">sottrazione(-)</option>
                 </select><br>
-                <input type="text" placeholder="numero 2"><br><br>
-                <button id="calcola">calcola</button>
+                <input id="numero2" type="number" placeholder="numero 2"><br><br>
+                <button onclick="calcolatrice()"  id="calcola">calcola</button>
                 <p>risultato:</p>
-                <input type="text" readonly>
+                <input id="risultato" type="text" readonly>
             </div>
             <div id="consegna">
                 <h2>Consegna</h2>
                 <p>note per il prof</p>
                 <textarea  id="note" placeholder="note..."></textarea>
-                <label >
-                    <input type="checkbox">ho controllato tutto.
+                <label>
+                    <input id="spunta" type="checkbox">ho controllato tutto.
                 </label><br><br>
-                <button id="bottone_terminacompito">TERMINA COMPITO</button>
-
-
-
+                <button onclick="consegna()" id="bottone_terminacompito">TERMINA COMPITO</button>
             </div>
 
         </div>
     </div>
-    <script src="../script/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
